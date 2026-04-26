@@ -1,0 +1,121 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
+::selection {
+  background: rgba(192, 132, 252, 0.28);
+}
+
+.text-muted {
+  color: var(--muted);
+}
+
+/* --- Page ambient: depth without rainbow noise --- */
+.ambient-blobs {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 90% 55% at 18% 8%, hsl(var(--accent-violet) / 0.12), transparent 55%),
+    radial-gradient(ellipse 70% 50% at 88% 18%, hsl(var(--accent-fuchsia) / 0.1), transparent 50%),
+    radial-gradient(ellipse 65% 60% at 50% 92%, hsl(var(--accent-cyan) / 0.08), transparent 55%),
+    radial-gradient(ellipse 50% 40% at 72% 60%, hsl(var(--accent-fuchsia) / 0.06), transparent 45%);
+  animation: ambient-drift 28s ease-in-out infinite alternate;
+}
+
+.noise-overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 220px 220px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ambient-blobs,
+  .gradient-shimmer,
+  .timeline-glow {
+    animation: none !important;
+  }
+}
+
+@keyframes ambient-drift {
+  0% {
+    filter: hue-rotate(-6deg) saturate(1.05);
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  100% {
+    filter: hue-rotate(8deg) saturate(1.1);
+    transform: scale(1.03) translate3d(0, -0.5%, 0);
+  }
+}
+
+/* --- Section rhythm: one accent bar + label weight --- */
+.section-eyebrow-line {
+  display: block;
+  height: 2px;
+  width: 3.5rem;
+  border-radius: 9999px;
+  background: linear-gradient(
+    90deg,
+    hsl(var(--accent-fuchsia) / 0.85),
+    hsl(var(--accent-violet) / 0.6),
+    hsl(var(--accent-cyan) / 0.4)
+  );
+  box-shadow: 0 0 20px hsl(var(--accent-fuchsia) / 0.25);
+}
+
+/* --- Reusable fine gradient for dividers in page.tsx --- */
+.gradient-hairline {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    hsl(var(--accent-violet) / 0.15),
+    hsl(var(--accent-fuchsia) / 0.2),
+    hsl(var(--accent-cyan) / 0.12),
+    transparent
+  );
+}
+
+/* --- CTA: restrained glow (hero / primary) --- */
+.gradient-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.gradient-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0.14) 50%,
+    rgba(255, 255, 255, 0) 60%,
+    transparent 100%
+  );
+  transform: translateX(-120%);
+  animation: shimmer-cta 3.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gradient-shimmer::after {
+    animation: none;
+  }
+}
+
+@keyframes shimmer-cta {
+  0%,
+  40% {
+    transform: translateX(-120%);
+  }
+  60%,
+  100% {
+    transform: translateX(120%);
+  }
+}
