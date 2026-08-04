@@ -1,12 +1,11 @@
 "use client";
 
 import * as React from "react";
-import Link from "next/link";
 import { m } from "framer-motion";
 
 import { PORTFOLIO, type NavSectionId } from "@/lib/constants";
 import { useNavStore } from "@/lib/nav-store";
-import { cn } from "@/lib/utils";
+import { cn, scrollToSection } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
 function useActiveSectionObserver(sectionIds: NavSectionId[]) {
@@ -49,17 +48,30 @@ export function SiteHeader() {
   );
   useActiveSectionObserver(sectionIds);
 
+  const handleSectionClick = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    sectionId: string,
+  ) => {
+    event.preventDefault();
+    scrollToSection(sectionId);
+  };
+
   return (
     <header className="sticky top-0 z-50 border-b border-white/8 bg-zinc-950/55 shadow-[0_1px_0_0] shadow-fuchsia-500/10 backdrop-blur-2xl supports-backdrop-filter:bg-zinc-950/40">
       <a
         href="#top"
+        onClick={(event) => handleSectionClick(event, "top")}
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-60 focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-black"
       >
         {PORTFOLIO.ui.skipToContent}
       </a>
 
       <div className="mx-auto flex h-18 w-full max-w-6xl items-center justify-between px-4 sm:px-6">
-        <Link href="#top" className="group inline-flex items-center gap-3">
+        <a
+          href="#top"
+          onClick={(event) => handleSectionClick(event, "top")}
+          className="group inline-flex items-center gap-3"
+        >
           <div className="grid h-9 w-9 place-items-center rounded-full border border-white/10 bg-linear-to-br from-fuchsia-500/10 via-zinc-900/80 to-violet-500/10 text-sm font-semibold tracking-tight ring-1 ring-inset ring-white/10 transition-transform duration-300 group-hover:scale-[1.02] group-hover:ring-fuchsia-500/25">
             {PORTFOLIO.person.name
               .split(" ")
@@ -73,7 +85,7 @@ export function SiteHeader() {
             </div>
             <div className="text-xs text-muted">{PORTFOLIO.person.role}</div>
           </div>
-        </Link>
+        </a>
 
         <nav className="hidden items-center gap-1 md:flex">
           {PORTFOLIO.nav.map((item) => {
@@ -82,6 +94,7 @@ export function SiteHeader() {
               <a
                 key={item.id}
                 href={`#${item.id}`}
+                onClick={(event) => handleSectionClick(event, item.id)}
                 className={cn(
                   "relative rounded-full px-3 py-2 text-sm text-muted transition-colors hover:text-white",
                   isActive && "text-white",
@@ -110,7 +123,10 @@ export function SiteHeader() {
             <PORTFOLIO.resume.icon className="h-4 w-4" />
             <span>{PORTFOLIO.resume.shortLabel}</span>
           </a>
-          <a href={PORTFOLIO.ui.navbarCta.href}>
+          <a
+            href={PORTFOLIO.ui.navbarCta.href}
+            onClick={(event) => handleSectionClick(event, "contact")}
+          >
             <Button
               variant="secondary"
               size="sm"
@@ -120,7 +136,11 @@ export function SiteHeader() {
               <PORTFOLIO.ui.navbarCta.icon className="h-4 w-4" />
             </Button>
           </a>
-          <a href="#contact" className="sm:hidden">
+          <a
+            href="#contact"
+            className="sm:hidden"
+            onClick={(event) => handleSectionClick(event, "contact")}
+          >
             <Button variant="secondary" size="sm">
               {PORTFOLIO.ui.navbarCta.label}
             </Button>

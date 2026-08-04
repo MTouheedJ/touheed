@@ -4,6 +4,7 @@ import { m, useReducedMotion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
 import { PORTFOLIO } from "@/lib/constants";
+import { scrollToSection } from "@/lib/utils";
 import { Section } from "@/components/sections/section";
 import { SectionHeading } from "@/components/section-heading";
 import { Card, CardContent } from "@/components/ui/card";
@@ -15,6 +16,14 @@ import { cn } from "@/lib/utils";
 export function ContactSection() {
   const tone = PORTFOLIO.ui.sectionAtmosphere.contact;
   const reduceMotion = useReducedMotion();
+
+  const handleSectionClick = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    sectionId: string,
+  ) => {
+    event.preventDefault();
+    scrollToSection(sectionId);
+  };
 
   return (
     <Section
@@ -53,13 +62,20 @@ export function ContactSection() {
                 {PORTFOLIO.contact.subtitle}
               </p>
               <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <a href={PORTFOLIO.contact.cta.href}>
+                <a
+                  href={PORTFOLIO.contact.cta.href}
+                  onClick={(event) => handleSectionClick(event, "contact")}
+                >
                   <Button size="lg" variant="glow" className="w-full min-w-[10rem] sm:w-auto">
                     {PORTFOLIO.contact.cta.label}
                     <ArrowUpRight className="h-4 w-4" />
                   </Button>
                 </a>
-                <a href="#projects" className="w-full sm:w-auto">
+                <a
+                  href="#projects"
+                  className="w-full sm:w-auto"
+                  onClick={(event) => handleSectionClick(event, "projects")}
+                >
                   <Button size="lg" variant="secondary" className="w-full min-w-[10rem]">
                     {PORTFOLIO.hero.primaryCta.label}
                   </Button>

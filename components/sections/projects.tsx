@@ -85,7 +85,7 @@ export function ProjectsSection() {
                 </div>
 
                 <div className="mt-6 flex flex-wrap gap-3">
-                  {p.links.live ? (
+                  {p.links.live && p.links.live.href !== "#" ? (
                     <a
                       href={p.links.live.href}
                       target="_blank"
@@ -96,7 +96,7 @@ export function ProjectsSection() {
                       </Button>
                     </a>
                   ) : null}
-                  {p.links.github ? (
+                  {p.links.github && p.links.github.href !== "#" ? (
                     <a
                       href={p.links.github.href}
                       target="_blank"

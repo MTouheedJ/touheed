@@ -87,9 +87,9 @@ export const PORTFOLIO = {
   person: {
     name: "Mirza Touheed Ali Baig",
     location: "Lahore, Pakistan",
-    role: "Software Engineer",
+    role: "Full-Stack Developer",
     tagline:
-      "I build premium web products with Next.js, TypeScript, and reliable backend foundations.",
+      "I build end-to-end web applications with React/Next.js front-ends backed by Node.js and FastAPI services.",
     availabilityBadge: "Open to select opportunities",
   },
 
@@ -121,23 +121,26 @@ export const PORTFOLIO = {
     primaryCta: { label: "View Projects", href: "#projects" },
     secondaryCta: { label: "Contact", href: "#contact" },
     stats: [
-      { label: "Experience", value: "3+ years" },
+      { label: "Experience", value: "4 years" },
       { label: "Production modules shipped", value: "15+" },
       { label: "Users impacted", value: "10K+" },
     ],
     quickFacts: [
       "Lighthouse 95+ mentality",
       "SSR • SSG • ISR with API integration",
-      "AI-assisted dev workflows (Cursor/Copilot)",
+      "AI-assisted dev workflows (GitHub Copilot, Cursor)",
+      "OpenAI-powered features and prompt engineering",
     ],
   },
 
   about: {
     title: "About",
-    lead: "I’m a frontend-leaning fullstack developer who turns product ideas into fast, polished interfaces backed by practical server-side architecture.",
+    lead: "Full-Stack Developer with 4 years building production web applications end-to-end — React/Next.js/TypeScript front-ends backed by Node.js and FastAPI systems.",
     body: [
       "Most of my work sits on the user-facing side: Next.js App Router, responsive UI systems, accessibility, motion, and performance tuning that keeps products feeling sharp.",
-      "I also handle the backend pieces that make those experiences dependable, including REST APIs, auth flows, Supabase/PostgreSQL data models, caching strategies, and deployment workflows.",
+      "I also build dependable backend services and APIs, working with Supabase/PostgreSQL, FastAPI, Docker, and OpenAI-powered LLM features.",
+      "I’ve shipped platforms serving 10K+ users with strong frontend performance (95+ Lighthouse, ~30% faster loads) and scalable architecture.",
+      "I earned a BSc in Computer Science from Bahria University and bring CI/CD, Agile delivery, and practical product focus into every build.",
     ],
     highlights: [
       {
@@ -177,13 +180,17 @@ export const PORTFOLIO = {
         label: "Frontend",
         items: [
           "React",
-          "Next.js (App Router)",
+          "Next.js (App Router, SSR, SSG, ISR)",
           "TypeScript",
+          "HTML5",
+          "CSS3",
           "Tailwind CSS",
+          "Material UI",
           "Framer Motion",
           "Redux Toolkit",
           "Zustand",
           "TanStack Query",
+          "React Query",
           "Accessibility (a11y)",
           "Performance optimization",
         ],
@@ -193,14 +200,19 @@ export const PORTFOLIO = {
         label: "Backend",
         items: [
           "Node.js",
-          "Express",
-          "REST APIs",
-          "Supabase",
+          "FastAPI",
+          "Python",
+          "SQL",
+          "REST API design",
+          "Authentication (JWT)",
+          "WebSockets",
+          "OpenAI API",
+          "Prompt engineering",
+          "LLM prompt chaining",
           "PostgreSQL",
+          "Supabase",
           "Database modeling",
-          "AWS fundamentals",
-          "Auth (sessions/JWT)",
-          "Caching strategies",
+          "API design review",
         ],
       },
       {
@@ -208,12 +220,18 @@ export const PORTFOLIO = {
         label: "Tools & DevOps",
         items: [
           "Git & GitHub",
-          "GitHub Actions",
           "Docker",
+          "GitHub Actions",
+          "CI/CD Pipelines",
           "Vercel",
-          "Testing mindset",
-          "Observability basics",
-          "Cursor / Copilot",
+          "Netlify",
+          "React Testing Library",
+          "Playwright",
+          "Component-driven development",
+          "Agile/Scrum",
+          "AI-assisted development",
+          "GitHub Copilot",
+          "Cursor",
         ],
       },
     ] satisfies SkillGroup[],
@@ -222,30 +240,60 @@ export const PORTFOLIO = {
   experience: {
     title: "Experience",
     subtitle:
-      "Impact-driven work across product UI, API integration, and delivery quality.",
+      "Production-ready web platforms with frontend performance, backend APIs, and reliable CI/CD delivery.",
     items: [
       {
-        title: "Frontend-leaning Fullstack Developer",
-        org: "Product teams (Client work)",
-        location: "Remote",
-        period: "2022 — Present",
+        title: "Full Stack Developer",
+        org: "MindRind",
+        location: "Lahore, Pakistan",
+        period: "Feb 2023 – Present",
         bullets: [
-          "Built 15+ production-grade modules used by 10K+ users, combining polished React/Next.js interfaces with clean data and API contracts.",
-          "Reduced API overhead by 40% and improved load time by 30% through caching, request shaping, server rendering choices, and frontend performance work.",
-          "Delivered dashboards, onboarding flows, and role-based product screens while supporting auth, Supabase data access, and deployment workflows.",
+          "Developed and maintained 15+ production-ready features and modules using React, Next.js, TypeScript, Node.js, FastAPI, and Supabase for 10K+ monthly active users.",
+          "Built end-to-end solutions with intuitive frontend experiences and scalable backend services, including REST APIs, authentication systems, and real-time functionality.",
+          "Improved application performance by optimizing state management with Redux Toolkit, refining API interactions, and implementing caching strategies for faster loads and fewer server requests.",
+          "Created responsive, user-friendly interfaces with Tailwind CSS and Material UI, ensuring consistency across devices while maintaining accessibility and performance.",
+          "Used Docker to simplify development and deployment environments, reducing setup issues and improving team consistency.",
+          "Automated build, testing, and deployment workflows with GitHub Actions to accelerate releases and improve development efficiency.",
+          "Implemented secure authentication, authorization, and database solutions with Supabase for reliable and scalable architectures.",
+          "Participated in Agile cycles, code reviews, sprint planning, and cross-functional collaboration to deliver features on schedule.",
+          "Worked closely with designers, product managers, and developers to convert business requirements into practical solutions and continuously improve the user experience.",
         ],
         tags: [
           "Next.js",
           "React",
           "TypeScript",
-          "Tailwind",
-          "Node.js",
-          "Supabase",
+          "React Query",
+          "Redux Toolkit",
+          "Zustand",
+          "GitHub Actions",
+          "Figma",
           "Performance",
           "CI/CD",
-          "Docker",
-          "AWS",
-          "Github",
+          "Supabase",
+          "REST API",
+        ],
+      },
+      {
+        title: "Associate Software Engineer",
+        org: "Technoventures",
+        location: "Lahore, Pakistan",
+        period: "Aug 2022 – Jan 2023",
+        bullets: [
+          "Built responsive web interfaces with HTML5, CSS3, and JavaScript.",
+          "Developed reusable, scalable React components to improve UI consistency and development efficiency.",
+          "Improved website performance, mobile responsiveness, and SEO to enhance user experience.",
+          "Maintained and updated existing websites by fixing bugs, implementing new features, and ensuring reliable functionality.",
+          "Worked with backend developers to integrate REST APIs into frontend workflows.",
+          "Used native and third-party libraries for state management throughout the project.",
+        ],
+        tags: [
+          "React",
+          "HTML5",
+          "CSS3",
+          "JavaScript",
+          "REST API",
+          "State management",
+          "Performance",
         ],
       },
     ] satisfies ExperienceItem[],
@@ -259,33 +307,39 @@ export const PORTFOLIO = {
       {
         title: "AI Nutritionist",
         description:
-          "AI-based health assistant with a polished nutrition workflow, personalized recommendations, and dependable request handling.",
+          "AI-driven nutritionist app that generates personalized weekly diet plans from fitness goals, dietary restrictions, and activity levels.",
         highlights: [
-          "Designed a clean onboarding flow, responsive nutrition UI, and structured prompts for consistent outputs.",
-          "Connected AI request flows with server-side validation, caching where appropriate, and predictable loading states.",
+          "Built a RESTful FastAPI backend handling user profiles and LLM prompt chaining for structured meal-plan generation.",
+          "Delivered a Next.js/TypeScript frontend with responsive UI and personalized weekly diet workflows.",
         ],
-        stack: ["Next.js", "TypeScript", "Tailwind", "AI", "Node.js"],
+        stack: ["FastAPI", "OpenAI API", "Prompt Engineering", "Next.js", "TypeScript", "Tailwind CSS"],
         links: {
-          live: { label: "Live", href: "#" },
+          live: { label: "Live", href: "https://www.eatsumn.com/" },
           github: { label: "GitHub", href: "#" },
         },
       },
       {
+  "title": "Dispatch Dudes",
+  "description": "Full-service logistics and truck dispatching platform engineered for high conversion with interactive quote workflows and transparent service models.",
+  "highlights": [
+    "Engineered a high-conversion landing platform featuring interactive multi-tier pricing structures, dynamic quote forms, and 24/7 onboarding workflows.",
+    "Built responsive, accessible UI modules showcasing multi-trailer logistics services, structured FAQ accordions, and real-time social proof sections."
+  ],
+  "stack": ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+  "links": {
+    "live": { "label": "Live", "href": "https://dispatch-dudes-llc.vercel.app/" },
+    "github": { "label": "GitHub", "href": "#" }
+  }
+},
+      {
         title: "AI Assistant Platform",
         description:
-          "A multi-modal assistant experience combining chat, voice interaction, and API-backed conversation flows.",
+          "AI assistant dashboard supporting chat and voice interaction with scalable Redux Toolkit state management.",
         highlights: [
-          "Built scalable UI patterns for conversation views, tool-like interactions, and animated feedback.",
-          "Structured client/server boundaries for AI responses, progressive rendering, and perceived speed.",
+          "Built an AI assistant dashboard supporting chat and voice interaction with scalable real-time state management.",
+          "Implemented Redux Toolkit patterns to manage global application state for complex AI interactions.",
         ],
-        stack: [
-          "Next.js",
-          "React",
-          "Framer Motion",
-          "TypeScript",
-          "AI",
-          "Node.js",
-        ],
+        stack: ["React", "Next.js", "Redux Toolkit", "TypeScript"],
         links: {
           live: { label: "Live", href: "#" },
           github: { label: "GitHub", href: "#" },
@@ -306,19 +360,34 @@ export const PORTFOLIO = {
         },
       },
       {
-        title: "MyExpertPal",
+        title: "AI House Visualizer",
         description:
-          "Learning platform featuring dashboards, role-based experiences, and Supabase-backed product flows.",
+          "AI-based platform for restyling house-exterior components from uploaded photos using SSR and dynamic SVG rendering.",
         highlights: [
-          "Designed modular dashboard components with consistent spacing, hierarchy, and reusable primitives.",
-          "Improved maintainability with typed data models, auth-aware screens, and Supabase data access.",
+          "Implemented SSR and polygon-driven dynamic SVG for an interactive, real-time editing experience.",
+          "Built photo-driven exterior styling features with responsive UI and performance-focused rendering.",
         ],
-        stack: ["Next.js", "TypeScript", "Tailwind", "Supabase"],
+        stack: ["Next.js", "TypeScript", "Tailwind CSS", "Redux Toolkit", "Node.js", "Docker", "Supabase"],
         links: {
           live: { label: "Live", href: "#" },
           github: { label: "GitHub", href: "#" },
         },
       },
+      {
+        title: "MyExpertPal",
+        description:
+          "Scalable learning platform with interactive dashboards and leaderboards built on an optimized component architecture.",
+        highlights: [
+          "Built a scalable learning platform with interactive dashboards and leaderboards using optimized component architecture.",
+          "Implemented REST API integration and robust state management for performance and maintainability.",
+        ],
+        stack: ["React", "Next.js", "TypeScript", "Node.js"],
+        links: {
+          live: { label: "Live", href: "#" },
+          github: { label: "GitHub", href: "#" },
+        },
+      },
+      
     ] satisfies Project[],
   },
 
@@ -326,14 +395,14 @@ export const PORTFOLIO = {
     title: "Contact",
     subtitle:
       "Want a polished frontend with the backend pieces to support it? Let’s talk.",
-    cta: { label: "Email me", href: "mailto:mirzatouheed27@gmail.com" },
+    cta: { label: "Email me", href: "mailto:touheedmirza096@gmail.com" },
   },
 
   social: [
     {
       id: "email",
       label: "Email",
-      href: "mailto:mirzatouheed27@gmail.com",
+      href: "mailto:touheedmirza096@gmail.com",
       icon: Mail,
     },
     {

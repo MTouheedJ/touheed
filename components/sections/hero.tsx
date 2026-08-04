@@ -5,7 +5,7 @@ import { m, useReducedMotion } from "framer-motion";
 
 import { PORTFOLIO } from "@/lib/constants";
 import type { SectionTone } from "@/lib/constants";
-import { cn } from "@/lib/utils";
+import { cn, scrollToSection } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -14,6 +14,14 @@ const statTones: SectionTone[] = ["fuchsia", "violet", "cyan", "fuchsia"];
 
 export function HeroSection() {
   const reduceMotion = useReducedMotion();
+
+  const handleSectionClick = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    sectionId: string,
+  ) => {
+    event.preventDefault();
+    scrollToSection(sectionId);
+  };
 
   return (
     <section id="top" className="relative overflow-hidden">
@@ -79,16 +87,22 @@ export function HeroSection() {
               }}
               className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap"
             >
-              <a href={PORTFOLIO.hero.primaryCta.href}>
-                <Button size="lg" variant="glow" className="w-full min-w-[11rem] sm:w-auto">
-                  {PORTFOLIO.hero.primaryCta.label}
-                </Button>
-              </a>
-              <a href={PORTFOLIO.hero.secondaryCta.href}>
-                <Button size="lg" variant="secondary" className="w-full min-w-[11rem] sm:w-auto">
-                  {PORTFOLIO.hero.secondaryCta.label}
-                </Button>
-              </a>
+              <a
+              href={PORTFOLIO.hero.primaryCta.href}
+              onClick={(event) => handleSectionClick(event, "projects")}
+            >
+              <Button size="lg" variant="glow" className="w-full min-w-[11rem] sm:w-auto">
+                {PORTFOLIO.hero.primaryCta.label}
+              </Button>
+            </a>
+            <a
+              href={PORTFOLIO.hero.secondaryCta.href}
+              onClick={(event) => handleSectionClick(event, "contact")}
+            >
+              <Button size="lg" variant="secondary" className="w-full min-w-[11rem] sm:w-auto">
+                {PORTFOLIO.hero.secondaryCta.label}
+              </Button>
+            </a>
               <a
                 href={PORTFOLIO.resume.href}
                 download={PORTFOLIO.resume.downloadFileName}
